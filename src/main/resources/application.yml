@@ -1,0 +1,29 @@
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.bjshfb.datasource.demo
+
+server:
+  port: 9085
+  servlet:
+    context-path: /eview
+
+spring:
+  application:
+    name: datasource
+#jpa 需要单独提出来
+  jpa:
+    show-sql: true
+
+  datasource:
+#    url: jdbc:mysql://%s:%s/%s?useUnicode=true&characterEncoding=utf-8
+#    username: root
+#    password: test
+    url: jdbc:%s://%s:%s/%s?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: eview
+    password: eview
+    type: com.alibaba.druid.pool.DruidDataSource
+  http:
+    converters:
+      preferred-json-mapper:
+
+#    type: com.zaxxer.hikari.HikariDataSource
